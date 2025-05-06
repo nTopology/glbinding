@@ -309,7 +309,7 @@ target_link_libraries(${target}
 # Precompiled Header Configuration
 #
 
-if (MSVC_IDE)
+if (MSVC_IDE AND NOT NTOP_CCACHE)
     # on msvc use private (non-api) per file precompiled headers on those grouped sources
 
     set_source_files_properties(${source_path}/Binding_pch.cpp PROPERTIES COMPILE_FLAGS /Yc"Binding_pch.h")
